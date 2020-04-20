@@ -1,0 +1,14 @@
+:: StoryMenu
+[[Profile]]
+[[Schedule]]
+<<link "Inventory">><<showInventory>><</link>>
+
+:: Profile
+
+
+:: Schedule
+
+
+:: ShowInventory [Inventory] 
+<<showInventory>>
+

@@ -1,0 +1,27 @@
+:: Start [presence]
+<<say '???'>>Miriam...<</say>>
+
+[[...|intro_2]]
+
+:: intro_2 [presence]
+<<say '???'>>Miriam...<</say>>
+
+[[...|intro_3]]
+
+:: intro_3 [presence]
+<<say '???'>>Meet me at The Tower of Knowledge. There is something I want to give you in person.<</say>>
+
+[[...|intro_4]]
+
+:: intro_4 [miriam]
+...
+
+I feel the strange presence fade away...
+
+[[Wake up|intro_5]]
+
+:: intro_5 [miriam]
+It is still dawn... 
+
+[[Get up]]
+[[Stay in bed]]

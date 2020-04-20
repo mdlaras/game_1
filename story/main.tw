@@ -1,0 +1,22 @@
+:: StoryData
+{
+        "ifid": "505C9C7A-3C7D-43DE-9DC1-2B4AD7C0F836"
+}
+:: StoryTitle
+Miriam and The Tower of Knowledge
+
+:: StoryInit [script]
+var inventory = {
+        tryGlobal:true,
+        nameList : [],
+        items: [],
+};
+
+var item = {
+        tryGlobal:true,
+        Name : "",
+        Category : "",
+        Quantity : 0,
+        Description : "",
+}
+
