@@ -2,13 +2,17 @@
 I get up from bed. It is still dawn, maybe a bit too early to prepare myself for morning class. But I like to come early. Or maybe I can just review the materials I read last night. Or... Maybe practice some magic?
 
 <<link "Prepare for class" "Prepare for class">>\
-<<if !hasVisited("Prepare for class")>>\
+<<if (State.hasPlayed("Prepare for class") == false)>>\
 <<addnewItem "Student's Staff" "Weapon" "A staff commonly used by students of The Great College of Magic.">>\
 <<addnewItem "Notebooks" "Key Item" "Miriam's class notes.">>\
 <</if>>\
-<</link>>\
+<</link>>
 [[Review materials]]
-[[Practice magic]]
+<<link "Practice magic" "Practice magic">>\
+<<if (State.hasPlayed("Practice magic") == false)>>\
+<<addnewItem "Student's Staff" "Weapon" "A staff commonly used by students of The Great College of Magic.">>\
+<</if>>\
+<</link>>\
 
 :: Prepare for class [miriam]
 
@@ -18,13 +22,14 @@ I clean myself, wear my uniform, and take the things I need for the day.
 
 Oh, I almost forgot about the question sheets I made for the classes. Should I bring them? But I don't know whether or not I can get their answers today...
 
-[[Take the question sheets]]
+<<link "Take the question sheets" "Take the question sheets">>\
+<<if (State.hasPlayed("Take the question sheets") == false)>>\
+<<addnewItem "Question Sheets" "Key Item" "Miriam's list of questions. Can be modified any time.">>\
+<</if>>\
+<</link>>
 [[Leave them]]
 
 :: Take the question sheets [miriam]
-<<if visited("Take the question sheets") < 2>>\
-<<addnewItem "Question Sheet" "Key Item" "Miriam's list of questions. Can be modified any time.">>\
-<</if>>\
 I take the question sheets I prepared last night and put them in my bag.
 
 [[Go to class]]

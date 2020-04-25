@@ -245,6 +245,7 @@ var item = {
 /* twine-user-script #3: "script.js" */
 Macro.add("addnewItem",{
     handler : function(){
+            window.oldInventoryHistory = {... inventory};
             var a = Object.create(item);
             a.Name = this.args[0];
             a.Category = this.args[1];
@@ -255,6 +256,10 @@ Macro.add("addnewItem",{
     }
 }
 );
+
+$('#history-backward').click(function(){
+    inventory = {... oldInventoryHistory};
+})
 
 Macro.add
 Macro.add("showInventory",{
@@ -305,23 +310,28 @@ Macro.add("showInventory",{
     </script><tw-passagedata pid="1" name="Get up" tags="miriam" position="100,100" size="100,100">I get up from bed. It is still dawn, maybe a bit too early to prepare myself for morning class. But I like to come early. Or maybe I can just review the materials I read last night. Or... Maybe practice some magic?
 
 &lt;&lt;link &quot;Prepare for class&quot; &quot;Prepare for class&quot;&gt;&gt;\
-&lt;&lt;if !hasVisited(&quot;Prepare for class&quot;)&gt;&gt;\
+&lt;&lt;if (State.hasPlayed(&quot;Prepare for class&quot;) == false)&gt;&gt;\
 &lt;&lt;addnewItem &quot;Student&#39;s Staff&quot; &quot;Weapon&quot; &quot;A staff commonly used by students of The Great College of Magic.&quot;&gt;&gt;\
 &lt;&lt;addnewItem &quot;Notebooks&quot; &quot;Key Item&quot; &quot;Miriam&#39;s class notes.&quot;&gt;&gt;\
 &lt;&lt;/if&gt;&gt;\
-&lt;&lt;/link&gt;&gt;\
+&lt;&lt;/link&gt;&gt;
 [[Review materials]]
-[[Practice magic]]</tw-passagedata><tw-passagedata pid="2" name="Prepare for class" tags="miriam" position="225,100" size="100,100">I clean myself, wear my uniform, and take the things I need for the day.
+&lt;&lt;link &quot;Practice magic&quot; &quot;Practice magic&quot;&gt;&gt;\
+&lt;&lt;if (State.hasPlayed(&quot;Practice magic&quot;) == false)&gt;&gt;\
+&lt;&lt;addnewItem &quot;Student&#39;s Staff&quot; &quot;Weapon&quot; &quot;A staff commonly used by students of The Great College of Magic.&quot;&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/link&gt;&gt;\</tw-passagedata><tw-passagedata pid="2" name="Prepare for class" tags="miriam" position="225,100" size="100,100">I clean myself, wear my uniform, and take the things I need for the day.
 
 ...
 
 Oh, I almost forgot about the question sheets I made for the classes. Should I bring them? But I don&#39;t know whether or not I can get their answers today...
 
-[[Take the question sheets]]
-[[Leave them]]</tw-passagedata><tw-passagedata pid="3" name="Take the question sheets" tags="miriam" position="350,100" size="100,100">&lt;&lt;if visited(&quot;Take the question sheets&quot;) &lt; 2&gt;&gt;\
-&lt;&lt;addnewItem &quot;Question Sheet&quot; &quot;Key Item&quot; &quot;Miriam&#39;s list of questions. Can be modified any time.&quot;&gt;&gt;\
+&lt;&lt;link &quot;Take the question sheets&quot; &quot;Take the question sheets&quot;&gt;&gt;\
+&lt;&lt;if (State.hasPlayed(&quot;Take the question sheets&quot;) == false)&gt;&gt;\
+&lt;&lt;addnewItem &quot;Question Sheets&quot; &quot;Key Item&quot; &quot;Miriam&#39;s list of questions. Can be modified any time.&quot;&gt;&gt;\
 &lt;&lt;/if&gt;&gt;\
-I take the question sheets I prepared last night and put them in my bag.
+&lt;&lt;/link&gt;&gt;
+[[Leave them]]</tw-passagedata><tw-passagedata pid="3" name="Take the question sheets" tags="miriam" position="350,100" size="100,100">I take the question sheets I prepared last night and put them in my bag.
 
 [[Go to class]]</tw-passagedata><tw-passagedata pid="4" name="Leave them" tags="miriam" position="475,100" size="100,100">I think I would rather take a look at them later today.
 

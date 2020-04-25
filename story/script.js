@@ -1,5 +1,6 @@
 Macro.add("addnewItem",{
     handler : function(){
+            window.oldInventoryHistory = {... inventory};
             var a = Object.create(item);
             a.Name = this.args[0];
             a.Category = this.args[1];
@@ -10,6 +11,10 @@ Macro.add("addnewItem",{
     }
 }
 );
+
+$('#history-backward').click(function(){
+    inventory = {... oldInventoryHistory};
+})
 
 Macro.add
 Macro.add("showInventory",{
