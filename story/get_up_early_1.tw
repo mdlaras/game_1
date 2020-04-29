@@ -52,11 +52,9 @@ Several books are piled up there, and also a pile of paper - my question sheets 
 
 :: Practice magic [miriam]
 I take my staff and sit down.
-<<if visited("Practice magic") < 2>>\
-<<addnewItem "Student's Staff" "Weapon" "A staff commonly used by students of The Great College of Magic.">>\
-<</if>>\
+
 Now... What should I practice?
 
-[[Offensive applied magic]]
-[[Defensive applied magic]]
-[[Applied healing magic]]
+[[Offensive applied magic|Offensive Magic 1]]
+[[Defensive applied magic|Defensive Magic 1]]
+[[Applied healing magic|Applied Magic 1]]
